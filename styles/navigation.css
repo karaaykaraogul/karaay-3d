@@ -1,0 +1,99 @@
+.header {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+  padding: 1rem;
+  font-family: var(--font-primary);
+}
+
+.header-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.desktop-nav {
+  display: none;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: var(--text-primary);
+}
+
+.desktop-nav .nav-link + .nav-link {
+  margin-left: 2rem;
+}
+
+.menu-button {
+  color: var(--text-primary);
+}
+
+.menu-button:focus {
+  outline: none;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.mobile-menu {
+  background-color: var(--bg-dark-transparent-heavy);
+  backdrop-filter: blur(1rem);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav-link {
+  display: block;
+  color: var(--text-secondary);
+  transition: color 0.2s;
+  padding: 0.5rem 0;
+}
+
+.mobile-nav-link:hover {
+  color: var(--text-primary);
+}
+
+.mobile-nav .mobile-nav-link + .mobile-nav-link {
+  margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

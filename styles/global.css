@@ -1,0 +1,147 @@
+:root {
+  /* Add new color variables */
+  --text-primary: rgb(255, 255, 255);
+  --text-secondary: rgb(209, 213, 219);
+  --bg-dark-transparent: rgba(0, 0, 0, 0.4);
+  --bg-dark-transparent-heavy: rgba(0, 0, 0, 0.8);
+  --bg-light-transparent: rgba(255, 255, 255, 0.5);
+  --font-primary: "Consolas", monospace;
+}
+
+/* Global selection styles */
+::selection {
+  background-color: #c0c0c0; /* Light gray background */
+  color: #000000; /* Black text */
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: #c0c0c0; /* Light gray background */
+  color: #000000; /* Black text */
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: var(--font-primary);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Canvas container - 3D Scene background */
+.canvas-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Place it behind other elements */
+}
+
+/* Content positioning */
+.content {
+  position: relative;
+  z-index: 1; /* Ensure content appears above the canvas */
+}
+
+/* Hero section styles */
+.hero-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.hero-title {
+  color: var(--text-primary);
+  font-size: 2.25rem; /* text-4xl */
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  height: 2.5rem; /* Fixed height to prevent layout shifts */
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s infinite;
+}
+
+.hero-description {
+  color: var(--text-primary);
+  font-size: 1.25rem;
+  max-width: 42rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Features grid */
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  width: 100%;
+  max-width: 56rem;
+  margin-top: 3rem;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+  .hero-title {
+    font-size: 3.75rem; /* md:text-6xl */
+  }
+
+  .hero-description {
+    font-size: 1.5rem; /* md:text-2xl */
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.main-container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.content-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  /* Hide scrollbar when not needed */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.content-area::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
